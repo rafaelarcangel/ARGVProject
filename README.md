@@ -1,2 +1,1 @@
-# ARGVProject
-A game of guessing the whole word with letters! The system will randomly choose a random word that included in the list. Each player will have 8 guesses and every time their guess is right, their guesses will not be reduced. 
+A python project program that stimulates one of the world's famous gaming machine; the slot machine. The player will be given $50 to start with. There will be specific fruit combinations to win cash prizes, and there is a special combination to win the jackpot money. The player can play until he wants, and can also stop when he likes to. The player's earnings will be monitored and will be presented each round.
