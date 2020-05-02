@@ -1,0 +1,55 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Player
+
+
+rectangle Slot_Machine_Game {
+Player --(Spin)
+(Spin)--[LOSE]
+(Spin)--(Winning Combination)
+
+(Winning Combination) -- [| BAR | BAR | BAR |]
+(Winning Combination) -- [| BELL | BELL | BELL\BAR |]
+(Winning Combination) -- [| PLUM | PLUM | PLUM\BAR |]
+(Winning Combination) -- [| ORANGE | ORANGE | ORANGE\BAR |]
+(Winning Combination) -- [| CHERRY | CHERRY | CHERRY |]
+(Winning Combination) -- [| CHERRY | CHERRY | ANY |]
+(Winning Combination) -- [| CHERRY | ANY | ANY |]
+(Winning Combination) -- [| DATALGO | DATALGO | DATALGO |]
+
+[| BAR | BAR | BAR |] -- (wins P12500)
+[| BELL | BELL | BELL\BAR |] -- (wins P2000)
+[| PLUM | PLUM | PLUM\BAR |] -- (wins P1000)
+[| ORANGE | ORANGE | ORANGE\BAR |] -- (wins P500)
+[| CHERRY | CHERRY | CHERRY |] -- (wins P350)
+[| CHERRY | CHERRY | ANY |] -- (wins P250)
+[| CHERRY | ANY | ANY |] -- (wins P100)
+[| DATALGO | DATALGO | DATALGO |] -- ( JACKPOT )
+
+
+
+}
+actor Player_wins
+(wins P12500) --> Player_wins
+(wins P2000) --> Player_wins
+(wins P1000) --> Player_wins
+(wins P500) --> Player_wins
+(wins P350) --> Player_wins
+(wins P250) --> Player_wins
+(wins P100) --> Player_wins
+( JACKPOT ) --> Player_wins
+
+
+
+
+
+
+actor Player_lose
+[LOSE] ----> Player_lose
+
+
+
+
+
+@enduml
